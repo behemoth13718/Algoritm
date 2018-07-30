@@ -29,6 +29,27 @@ public class TreeImpl implements Tree {
         currentSize++;
     }
 
+    @Override
+    public void insert(IdBag id) {
+        Node newNode = new Node(id);
+        int key = newNode.getKeyId();
+
+        Node parent = findParentForInsert(key);
+
+        if (parent == null) {
+            root = newNode;
+        } else {
+            if (parent.isLeft(key)) {
+                parent.setLeftChild(newNode);
+            } else {
+                parent.setRightChild(newNode);
+            }
+        }
+        currentSize++;
+
+    }
+
+
     private Node findParentForInsert(int key) {
         Node currentNode = root;
         Node parent = null;
@@ -244,7 +265,7 @@ public class TreeImpl implements Tree {
             while ( !globalStack.isEmpty() ) {
                 Node tempNode = globalStack.pop();
                 if (tempNode != null) {
-                    System.out.print(tempNode.getKey());
+                    System.out.print(tempNode.getKeyId());///изменил на id
                     localStack.push(tempNode.getLeftChild());
                     localStack.push(tempNode.getRightChild());
                     if (tempNode.getLeftChild() != null || tempNode.getRightChild() != null) {

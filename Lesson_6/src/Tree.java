@@ -8,6 +8,8 @@ public interface Tree {
 
     void insert(Person person);
 
+    void insert(IdBag id);
+
     boolean remove(int key);
 
     Person find(int key);
