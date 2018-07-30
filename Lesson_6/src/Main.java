@@ -34,6 +34,9 @@ public class Main {
 //    }
 static int current =0;
 
+    private static void generateClass(){
+
+    }
 
     private static int random(){
         int a = 0;
