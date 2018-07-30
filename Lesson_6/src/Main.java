@@ -13,7 +13,7 @@ public class Main {
         addNode(tree, 20);
 
 //        System.out.println(tree.remove(30));
-     //   System.out.println(tree.remove(45));
+        System.out.println(tree.remove(45));
 
       //  System.out.println("Find 15 = " + tree.find(115));
 
